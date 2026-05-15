@@ -1,70 +1,86 @@
-Loan Default Risk Model & FICO Score Quantization
-Overview
+# Loan Default Risk Model & FICO Score Quantization
+
+## Overview
 
 This project focuses on credit risk modeling and borrower risk analysis using Python and machine learning techniques. The project was developed as part of the JPMorgan Chase & Co. Quantitative Research Virtual Experience Program on Forage.
 
 The project consists of two major components:
 
-Loan Default Prediction & Expected Loss Estimation
-FICO Score Quantization & Rating Mapping
+1. Loan Default Prediction & Expected Loss Estimation  
+2. FICO Score Quantization & Rating Mapping  
 
 The goal is to estimate borrower default risk, calculate expected financial losses, and generate automated credit rating buckets from FICO scores.
 
-Project Components
-1. Loan Default Prediction Model
+---
 
-A Logistic Regression model was built to estimate the Probability of Default (PD) for borrowers using financial and credit-related attributes.
+# Features
 
-Features Used
-Credit lines outstanding
-Loan amount outstanding
-Total debt outstanding
-Income
-Years employed
-FICO score
-Model Outputs
-Probability of Default (PD)
-Expected Loss estimation
+## Loan Default Prediction Model
 
-Expected Loss Formula:
+- Built a Logistic Regression model to estimate Probability of Default (PD)
+- Estimated Expected Loss for borrowers
+- Performed feature engineering and risk analysis
+- Used borrower financial and credit-related attributes
 
-Expected Loss=PD×LoanAmount×(1−RecoveryRate)
+### Features Used
 
-Assumed Recovery Rate:
+- Credit lines outstanding
+- Loan amount outstanding
+- Total debt outstanding
+- Income
+- Years employed
+- FICO score
 
-RecoveryRate=10%
+### Expected Loss Formula
 
-2. FICO Score Quantization & Rating Mapping
+```python
+Expected Loss = PD × Loan Amount × (1 - Recovery Rate)
+```
 
-This module creates an automated rating system by converting continuous FICO scores into discrete credit risk buckets.
+Assumed Recovery Rate = 10%
 
-Techniques Used
-Quantization
-Log-Likelihood Optimization
-Dynamic Programming
-Objective
+---
 
-Generate optimal FICO score boundaries that best summarize borrower default behavior.
+## FICO Score Quantization & Rating Mapping
 
-Rating Rule
-Lower rating number = better credit quality
-Higher rating number = higher credit risk
+- Built an automated FICO rating system
+- Applied Quantization techniques
+- Used Log-Likelihood Optimization
+- Implemented Dynamic Programming for optimal bucket boundaries
+
+### Rating Rule
+
+- Lower rating = Better credit quality
+- Higher rating = Higher default risk
 
 Example:
 
-FICO 800 → Rating 1
-FICO 720 → Rating 2
-FICO 650 → Rating 5
-FICO 550 → Rating 9
-Technologies Used
-Python
-Pandas
-NumPy
-Scikit-learn
-Logistic Regression
-Dynamic Programming
-Statistical Modeling
-Project Structure
+| FICO Score | Rating |
+|------------|---------|
+| 800        | 1       |
+| 750        | 2       |
+| 680        | 4       |
+| 620        | 6       |
+| 550        | 9       |
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Logistic Regression
+- Dynamic Programming
+- Statistical Modeling
+- Financial Risk Analysis
+
+---
+
+# Project Structure
+
+```bash
 Loan_Default_Risk_Model/
 │
 ├── loan_default_model.py
@@ -72,38 +88,67 @@ Loan_Default_Risk_Model/
 ├── Task 3 and 4_Loan_Data.csv
 ├── README.md
 ├── .gitignore
-Installation
+```
+
+---
+
+# Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/Bhawani-Singh0175/Loan_Default_Risk_Model.git
+```
 
 Move into the project folder:
 
+```bash
 cd Loan_Default_Risk_Model
+```
 
 Install required libraries:
 
+```bash
 pip install pandas numpy scikit-learn matplotlib
-Running the Project
-Run Loan Default Prediction Model
+```
+
+---
+
+# Running the Project
+
+## Run Loan Default Prediction Model
+
+```bash
 python loan_default_model.py
+```
 
-This outputs:
+### Output
 
-Model accuracy
-Probability of Default
-Expected Loss
-Run FICO Score Rating Map
+- Model Accuracy
+- Probability of Default
+- Expected Loss
+
+---
+
+## Run FICO Score Rating Map
+
+```bash
 python fico_score_rating_map.py
+```
 
-This outputs:
+### Output
 
-Optimized FICO rating buckets
-Default rates per bucket
-Sample borrower ratings
-Example Output
-Loan Default Prediction
+- Optimized FICO rating buckets
+- Default rates per bucket
+- Sample borrower ratings
+
+---
+
+# Example Output
+
+## Loan Default Prediction
+
+```python
 Model Accuracy: 0.9850
 
 Prediction Result:
@@ -111,24 +156,40 @@ Prediction Result:
  'Probability of Default': 0.4311,
  'Expected Loss': 1940.05
 }
-FICO Rating Example
+```
+
+---
+
+## FICO Rating Example
+
+```python
 FICO Score: 750 | Rating: 2 | Estimated Default Rate: 0.0261
-Key Concepts Applied
-Credit Risk Modeling
-Probability of Default (PD)
-Expected Loss Estimation
-Statistical Classification
-Quantization
-Likelihood Functions
-Dynamic Programming
-Financial Risk Analysis
-Learning Outcomes
+```
+
+---
+
+# Key Concepts Applied
+
+- Credit Risk Modeling
+- Probability of Default (PD)
+- Expected Loss Estimation
+- Statistical Classification
+- Quantization
+- Likelihood Functions
+- Dynamic Programming
+- Financial Data Analysis
+
+---
+
+# Learning Outcomes
 
 This project helped strengthen understanding of:
 
-Machine Learning for Finance
-Credit Risk Analytics
-Borrower Risk Assessment
-Statistical Modeling
-Financial Data Analysis
-Optimization Techniques
+- Machine Learning for Finance
+- Credit Risk Analytics
+- Borrower Risk Assessment
+- Statistical Modeling
+- Optimization Techniques
+
+---
+
